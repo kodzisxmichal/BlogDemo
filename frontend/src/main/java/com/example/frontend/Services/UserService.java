@@ -47,14 +47,4 @@ public class UserService {
                 .retrieve()
                 .toBodilessEntity();
     }
-
-    public void loginUser(LoginDTO loginDTO){
-        restClient
-                .post().uri(DATA_URL+"/users/login")
-                .body(loginDTO)
-                .contentType(MediaType.APPLICATION_JSON)
-                .body(loginDTO)
-                .retrieve()
-                .toBodilessEntity();
-    }
 }
