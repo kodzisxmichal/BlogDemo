@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Posts</title>
+    <link rel="stylesheet" type="text/css"  th:href="@{/styles/style.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="content">
+    <h2>Posts</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Content</th>
+            <th>Create Date</th>
+            <th>AuthorID</th>
+        </tr>
+        <tr th:each="post: ${posts}">
+            <td th:text="${post.ID}"></td>
+            <td th:text="${post.title}"></td>
+            <td th:text="${post.description}"></td>
+            <td th:text="${post.content}"></td>
+            <td th:text="${post.createDate}"></td>
+            <td th:text="${post.author.ID}"></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

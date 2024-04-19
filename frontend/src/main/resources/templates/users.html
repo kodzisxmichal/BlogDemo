@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Users</title>
+    <link rel="stylesheet" type="text/css"  th:href="@{/styles/style.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="content">
+    <h2>Users</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>E-mail</th>
+            <th>AvatarURL</th>
+            <th>PermissionID</th>
+        </tr>
+        <tr th:each="user: ${users}">
+            <td th:text="${user.ID}"></td>
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.password}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.avatarURL}"></td>
+            <td th:text="${user.permission.ID}"></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

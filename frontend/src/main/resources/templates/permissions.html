@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Permissions</title>
+    <link rel="stylesheet" type="text/css"  th:href="@{/styles/style.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="content">
+    <h2>Permissions</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>AccessLevel</th>
+        </tr>
+        <tr th:each="permission: ${permissions}">
+            <td th:text="${permission.ID}"></td>
+            <td th:text="${permission.name}"></td>
+            <td th:text="${permission.accessLevel}"></td><br>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Comments</title>
+    <link rel="stylesheet" type="text/css"  th:href="@{/styles/style.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="content">
+    <h2>Comments</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Author</th>
+            <th>Content</th>
+            <th>Create date</th>
+            <th>ParentID</th>
+        </tr>
+        <tr th:each="comment: ${comments}">
+            <td th:text="${comment.ID}"></td>
+            <td th:text="${comment.author}"></td>
+            <td th:text="${comment.value}"></td>
+            <td th:text="${comment.createDate}"></td>
+            <td th:text="${comment.parent.ID}"></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
