@@ -29,28 +29,21 @@
     </div>
 </div>
 
-<div class="footer">
-    <p>Blog Demo footer</p>
+<div class="content">
+    <form id="addPost" action="#" th:action="@{/user/loginDTO}" th:object="${user}" method="post">
+        <h2>Create Blog</h2>
+        <label for="post-title">Username</label><br>
+        <input id="post-title" type="text" th:field="*{title}" /><br>
+
+        <label for="post-description">Password</label><br>
+        <input id="post-description" type="password" th:field="*{description}" /><br>
+
+        <button type="submit">Login</button>
+    </form>
 </div>
 
-<div class="content">
-    <h2>Comments</h2>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Author</th>
-            <th>Content</th>
-            <th>Create date</th>
-            <th>ParentID</th>
-        </tr>
-        <tr th:each="comment: ${comments}">
-            <td th:text="${comment.ID}"></td>
-            <td th:text="${comment.author}"></td>
-            <td th:text="${comment.value}"></td>
-            <td th:text="${comment.createDate}"></td>
-            <td th:text="${comment.parent.ID}"></td>
-        </tr>
-    </table>
+<div class="footer">
+    <p>Blog Demo footer</p>
 </div>
 
 </body>

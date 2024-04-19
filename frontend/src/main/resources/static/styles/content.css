@@ -1,0 +1,13 @@
+.content{
+    position: relative;
+    width: calc(100vw - 80px);
+    height: calc(100vh - 242px);
+    background-color: #eeebf0;
+    padding: 20px 40px;
+}
+
+.blog-list{
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 80px);
+}

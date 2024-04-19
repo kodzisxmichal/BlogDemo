@@ -40,7 +40,7 @@ public class PostService {
     }
 
     public void savePost(PostDTO postDto){
-        postDto.setAuthorID(3L);
+        postDto.setAuthorID(2L);
         restClient
                 .post().uri(DATA_URL + "/posts/add")
                 .contentType(MediaType.APPLICATION_JSON)

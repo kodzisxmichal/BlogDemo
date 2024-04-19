@@ -22,6 +22,10 @@ public class UserService {
         return userRepository.findById(id).orElseThrow(() -> new UserNotFound("User with id: " + id + " not found"));
     }
 
+    public User findByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
+
     public void save(User user) {
         userRepository.save(user);
     }

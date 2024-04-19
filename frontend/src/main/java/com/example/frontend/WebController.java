@@ -56,7 +56,7 @@ public class WebController {
     @GetMapping("/posts/add")
     public String showFormPost(Model model) {
         model.addAttribute("post", new Post());
-        return "createPost";
+        return "addBlog";
     }
 
     @PostMapping("/posts/add")
@@ -64,6 +64,12 @@ public class WebController {
         log.info("Calling postService with postDTO");
         services.getPostService().savePost(postDTO);
         return "posts";
+    }
+
+    @GetMapping()
+    public String showMainPage(Model model) {
+        model.addAttribute("posts", services.getPostService().findAllPosts());
+        return "index";
     }
 
 }

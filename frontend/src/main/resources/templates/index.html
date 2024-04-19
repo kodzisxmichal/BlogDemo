@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Steam Reader</title>
-    <link rel="stylesheet" type="text/css"  th:href="@{/styles/style.css}">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <title>Blog Demo</title>
+    <link rel="stylesheet" href="../static/styles/style.css" th:href="@{/styles/style.css}">
+    <link rel="stylesheet" href="../static/styles/header.css" th:href="@{/styles/header.css}">
+    <link rel="stylesheet" href="../static/styles/content.css" th:href="@{/styles/content.css}">
+    <link rel="stylesheet" href="../static/styles/blogTile.css" th:href="@{/styles/blogTile.css}">
+    <link rel="stylesheet" href="../static/styles/footer.css" th:href="@{/styles/footer.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1>Welcome</h1>
+<div class="header">
+    <div class="logo"><h1>Blog</h1></div>
+    <div class="search-bar">
+        <form>
+            <input type="text">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="navigation">
+        <nav>
+            <a href="/">Blogs</a>
+            <a href="/posts/add">Add Blog</a>
+            <a href="">Account</a>
+        </nav>
+    </div>
+</div>
 <div class="content">
-
+    <div class="blog-list">
+        <div class="blog-tile" th:each="post: ${posts}">
+            <a>
+            <div class="title"><strong th:text="${post.title}">Title</strong></div>
+            <div class="info">
+                <span th:text="'Posted by ' + ${post.author.username}">Admin</span><br>
+                <span th:text="' on ' + ${post.createDate}">12.01.2024 18:20</span>
+            </div>
+            <br>
+            <div class="description">
+                <p th:text="${post.description}">Long long long description</p>
+            </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p>Blog Demo footer</p>
 </div>
 
 </body>

@@ -11,7 +11,7 @@ public class Category {
 
     private Long ID;
     private String name;
-    private Set<Post> posts;//
+    private Set<Post> posts;
 
 
     public void setID(Long ID) {
